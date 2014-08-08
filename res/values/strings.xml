@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gasolina</string>
+    <string name="action_settings">Configurações</string>
+    <string name="connect_to_the_internet">Ligue-se à internet</string>
+    <string name="searching_gps_signal">A procurar sinal de GPS</string>
+    <string name="distance">Distância</string>
+    <string name="price">Preço</string>
+    <string name="list">Lista</string>
+    <string name="map">Mapa</string>
+    
+	<!-- api -->
+	<string name="apiStationsBaseUrl">http://185.38.45.33/v0/stations</string>
+    <string name="apiBasicAuthUser">quim</string>
+    <string name="apiBasicAuthPass">roscas</string>
+    
+	<!-- settings activity -->
+    <string name="radiusSearch">Raio de pesquisa</string>
+    <string name="order">Ordenação</string>
+    
+	
+    <string name="chooseSearchRadius">Escolha uma distância</string>
+    <string-array name="distanceArrayEntries">
+        <item>1 km</item>
+        <item>5 km</item>
+        <item>10 km</item>
+        <item>15 km</item>
+        <item>20 km</item>
+    </string-array>
+    
+    <string name="distanceArrayDefaultValue">5</string>
+    <string-array name="distanceArrayValues">
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>50</item>
+    </string-array>
+    
+    <string name="chooseOrder">Escolha a ordenação preferida</string>
+    <string name="orderArrayDefaultValue">distance</string>
+	<string-array name="orderArrayEntries">
+	    <item>@string/distance</item>
+	    <item>@string/price</item>
+	</string-array>    
+    
+	<string-array name="orderArrayValues">
+        <item>distance</item>
+        <item>price</item>
+    </string-array>
+	
+</resources>
