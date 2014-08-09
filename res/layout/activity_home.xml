@@ -5,25 +5,74 @@
     android:layout_gravity="center_vertical"
     android:orientation="vertical"
     tools:context=".HomeActivity" >
-<!--     android:gravity="center_vertical" -->
 
-    <ListView android:id="@+id/stationsMainList"
-        android:layout_width="fill_parent"
+	<LinearLayout android:id="@+id/stationsListFragmentsContainer"
+	    android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"/>
+        android:orientation="vertical"
+        android:visibility="gone">
+        
+	    <RadioGroup
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/mainListRadioButton"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/list_radio_button_selector"
+            android:checked="true"
+            android:button="@null"
+            android:gravity="center_horizontal"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/list" />
+
+        <RadioButton
+            android:id="@+id/mainMapRadioButton"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:background="@drawable/map_radio_button_selector"
+            android:gravity="center_horizontal"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:layout_margin="0dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/map" />
+
+    </RadioGroup>
+	    
+		<fragment
+	       android:id="@+id/stationsListMap"
+	       android:layout_width="match_parent"
+	       android:layout_height="match_parent"
+	       class="com.google.android.gms.maps.MapFragment"
+	       android:visibility="visible" />
+		
+		<ListView android:id="@+id/stationsMainList"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:visibility="gone"
+	        android:layout_gravity="top"/>
+	</LinearLayout>
 
     <LinearLayout android:id="@+id/stationsListGPSLookupLL" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:visibility="gone">
+        android:layout_gravity="center_horizontal|center_vertical">
         
 	    <ImageView
 	        android:layout_width="200dp"
 	        android:layout_height="200dp"
 	        android:id="@+id/stationsListGpsAnimationImage"/>
-<!-- 	        android:src="@anim/gps_animation" -->
 	
 	    <TextView
 	        android:layout_width="wrap_content"

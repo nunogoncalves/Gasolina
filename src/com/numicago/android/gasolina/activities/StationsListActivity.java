@@ -34,6 +34,8 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 	private LocationManager locationManager;
 	private List<Station> stations;
 	
+	private boolean listeningToGps;
+	
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,7 +55,6 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 		OnItemClickListener listener = new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View arg1, int position, long id) {
-				Toast.makeText(thisActivity, "clicked", Toast.LENGTH_LONG).show();
 				Station station = (Station) parent.getAdapter().getItem(position);
 				Bundle b = new Bundle();
 				b.putSerializable("station", station);
@@ -68,7 +69,8 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 
 	@SuppressWarnings("unchecked")
 	public void dataReadyToUse(List<?> stations) {
-		homeViewLoader.toggleVisibility();
+		listeningToGps = false;
+		homeViewLoader.showStationsListOrMap();
 		this.stations = (ArrayList<Station>) stations;
 		if(stations.size() == 0){
 			Toast.makeText(thisActivity, "ZERO STATIOPNS", Toast.LENGTH_LONG).show();
@@ -77,8 +79,11 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 	}
 
 	public void listenToLocationUpdates() {
-		homeViewLoader.toggleVisibility();
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+		if (!listeningToGps) {
+			listeningToGps = true;
+			homeViewLoader.showGpsListeningSignal();
+			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+		}
 	}
 	
 	private LocationListener locationListener;
@@ -99,7 +104,6 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 		};
 	}
 	
-	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    MenuInflater inflater = getMenuInflater();
@@ -119,5 +123,9 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 			return super.onOptionsItemSelected(item);
 		}
 		return true;
+	}
+	
+	public void onRadioButtonClicked(View view) {
+	    homeViewLoader.onRadioButtonClicked(view);
 	}
 }
