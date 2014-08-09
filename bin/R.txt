@@ -441,7 +441,7 @@ int id stationItemDistanceTV 0x7f060063
 int id stationItemNameTV 0x7f060061
 int id stationItemUpdatedAtTV 0x7f060064
 int id stationItembrandNameTV 0x7f060062
-int id stationsListGPSLookupIV 0x7f06004f
+int id stationsListGPSLookupLL 0x7f06004f
 int id stationsMainList 0x7f06004e
 int id strict_sandbox 0x7f060021
 int id submit_area 0x7f06004b

@@ -1578,7 +1578,7 @@ containing a value of this type.
         public static final int stationItemNameTV=0x7f060061;
         public static final int stationItemUpdatedAtTV=0x7f060064;
         public static final int stationItembrandNameTV=0x7f060062;
-        public static final int stationsListGPSLookupIV=0x7f06004f;
+        public static final int stationsListGPSLookupLL=0x7f06004f;
         public static final int stationsMainList=0x7f06004e;
         public static final int strict_sandbox=0x7f060021;
         public static final int submit_area=0x7f06004b;

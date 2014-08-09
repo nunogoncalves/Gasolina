@@ -42,9 +42,9 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 		
 		appSettings = ApplicationSettings.getInstance(this);
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		homeViewLoader = new StationsListViewLoader(this);
 		buildLocationListener();
 		listenToLocationUpdates();
-		homeViewLoader = new StationsListViewLoader(this);
 		homeViewLoader.getListView().setOnItemClickListener(viewStationDetails());
 		
 	}
@@ -68,6 +68,7 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 
 	@SuppressWarnings("unchecked")
 	public void dataReadyToUse(List<?> stations) {
+		homeViewLoader.toggleVisibility();
 		this.stations = (ArrayList<Station>) stations;
 		if(stations.size() == 0){
 			Toast.makeText(thisActivity, "ZERO STATIOPNS", Toast.LENGTH_LONG).show();
@@ -76,12 +77,14 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 	}
 
 	public void listenToLocationUpdates() {
+		homeViewLoader.toggleVisibility();
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
 	}
 	
 	private LocationListener locationListener;
 	
 	private void buildLocationListener() {
+		homeViewLoader.getListView().setVisibility(View.GONE);
 		locationListener = new LocationListener() {
 			public void onLocationChanged(Location loc) {
 				if (appSettings.isConnectedToInternet()) {
