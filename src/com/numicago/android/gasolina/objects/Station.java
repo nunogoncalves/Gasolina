@@ -9,6 +9,8 @@ import java.util.Locale;
 import android.location.Location;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.numicago.android.gasolina.R;
+import com.numicago.android.gasolina.activities.App;
 import com.numicago.android.gasolina.settings.ApplicationSettings;
 
 public class Station implements Serializable {
@@ -146,7 +148,9 @@ public class Station implements Serializable {
 	
 	public String getUpdatedAt() {
 		SimpleDateFormat parseFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ", Locale.getDefault());
-		SimpleDateFormat displayFormatter = new SimpleDateFormat("dd 'de' MMMM 'às' HH:mm", Locale.getDefault());
+		SimpleDateFormat displayFormatter = new SimpleDateFormat(
+				App.getContext().getString(R.string.dateFormat),
+				Locale.getDefault());
 		
 		try {
 			return displayFormatter.format(parseFormatter.parse(updated_at));
