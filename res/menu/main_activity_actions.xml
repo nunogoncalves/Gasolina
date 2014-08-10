@@ -9,7 +9,7 @@
     
     <item android:id="@+id/action_refresh_stations_list"
           android:icon="@android:drawable/ic_popup_sync"
-          android:title="Actualizar"
+          android:title="@string/refresh"
           gasolina:showAsAction="ifRoom"/>
     
 </menu>

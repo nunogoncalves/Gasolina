@@ -1,6 +1,5 @@
 package com.numicago.android.gasolina.adapters;
 
-import java.util.HashMap;
 import java.util.List;
 
 import android.annotation.SuppressLint;
@@ -14,8 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.numicago.android.gasolina.R;
+import com.numicago.android.gasolina.enums.EnumStationBrand;
 import com.numicago.android.gasolina.objects.Station;
-import com.numicago.android.gasolina.utils.ImageLoader;
 
 public class StationItemAdapter extends BaseAdapter {
 
@@ -61,7 +60,7 @@ public class StationItemAdapter extends BaseAdapter {
 	@SuppressLint("InflateParams")
 	@Override
 	public View getView(int index, View convertView, ViewGroup parent) {
-		View vi = null;
+		View vi = convertView;
 		if (vi == null) {
 			vi = inflater.inflate(R.layout.station_list_item, null);
 		}
@@ -72,29 +71,10 @@ public class StationItemAdapter extends BaseAdapter {
 		return vi;
 	}
 	
-	private static final HashMap<String, Integer> namesHash;
-    static
-    {
-    	namesHash = new HashMap<String, Integer>();
-    	namesHash.put("galp", R.drawable.galp);
-    	namesHash.put("cepsa", R.drawable.cepsa);
-    	namesHash.put("bp", R.drawable.bp);
-    	namesHash.put("intermarche", R.drawable.intermarche);
-    	namesHash.put("jumbo", R.drawable.jumbo);
-    	namesHash.put("rede_energia", R.drawable.rede_energia);
-    	namesHash.put("repsol", R.drawable.repsol);
-    }
-	
 	private void fillViews(Station station) {
-		String brandName = station.getFormattedBrandName();
-		if(brandName != null && brandName.length() > 0) {
-			Integer drawable = namesHash.get(brandName);
-			if (drawable == null) {
-				drawable = R.drawable.station_placeholder;
-			}
+		Integer drawable = EnumStationBrand.getIconDrawableFromApiName(station.getBrandName());
 			
-			stationItemBrandNameIV.setImageDrawable(activity.getResources().getDrawable(drawable));
-		}
+		stationItemBrandNameIV.setImageDrawable(activity.getResources().getDrawable(drawable));
 		
 		gasNameTV.setText(station.getName());
 		stationItemLatLngTV.setText(station.getDistance());

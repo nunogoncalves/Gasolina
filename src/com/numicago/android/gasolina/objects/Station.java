@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
 import java.util.Locale;
 
 import android.location.Location;
@@ -180,27 +179,6 @@ public class Station implements Serializable {
 				getLatLongObject().longitude, results);
 		
 		return results[0];
-	}
-
-	private static final HashMap<String, String> namesHash;
-    static
-    {
-    	namesHash = new HashMap<String, String>();
-    	namesHash.put("GALP", "galp");
-    	namesHash.put("CEPSA", "cepsa");
-    	namesHash.put("BP", "bp");
-    	namesHash.put("INTERMARCHÉ", "intermarche");
-    	namesHash.put("JUMBO", "jumbo");
-    	namesHash.put("REDE ENERGIA", "rede_energia");
-    	namesHash.put("REPSOL", "repsol");
-    }
-
-	public String getFormattedBrandName() {
-		String formatted = Station.namesHash.get(brand_name);
-		if(formatted != null) {
-			return formatted;
-		}
-		return "";
 	}
 	
 }

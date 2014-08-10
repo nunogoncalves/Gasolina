@@ -12,6 +12,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.numicago.android.gasolina.R;
+import com.numicago.android.gasolina.enums.EnumStationBrand;
 import com.numicago.android.gasolina.objects.Station;
 import com.numicago.android.gasolina.utils.ImageLoader;
 
@@ -54,8 +55,10 @@ public class StationDetailsViewLoader {
 	}
 	
 	protected void fillViews() {
+		String appName = EnumStationBrand
+				.getAppNameFromApiName(station.getBrandName());
 		new ImageLoader(activity).DisplayImage(
-				brandBaseImageUrl + station.getFormattedBrandName() + ".png", 
+				brandBaseImageUrl + appName + ".png", 
 				activity,
 				stationDetailsBrandImage,
 				true,
