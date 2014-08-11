@@ -5,6 +5,7 @@
 	<string name="apiStationsBaseUrl">http://185.38.45.33/v0/stations</string>
     <string name="apiBasicAuthUser">quim</string>
     <string name="apiBasicAuthPass">roscas</string>
+    <string name="apiDateFormat">"yyyy-MM-dd\'T\'HH:mm:ssZ"</string>
     
     <string-array name="distanceArrayEntries">
         <item>1 km</item>

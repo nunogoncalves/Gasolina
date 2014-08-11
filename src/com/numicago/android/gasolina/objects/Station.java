@@ -146,16 +146,32 @@ public class Station implements Serializable {
 		return updated_at;
 	}
 	
+	private SimpleDateFormat apiDateFormatter;
+	
+	private SimpleDateFormat getApiDateFormatter() {
+		if (apiDateFormatter == null) {
+			apiDateFormatter = new SimpleDateFormat(
+					App.getContext().getString(R.string.apiDateFormat), 
+					Locale.getDefault()); 
+		}
+		return apiDateFormatter;
+	}
+	
+	private SimpleDateFormat displayDateFormatter;
+	
+	private SimpleDateFormat getDisplayFormatter() {
+		if (displayDateFormatter == null) {
+			displayDateFormatter = new SimpleDateFormat(
+					App.getContext().getString(R.string.dateFormat), 
+					Locale.getDefault()); 
+		}
+		return displayDateFormatter;
+	}
+	
 	public String getUpdatedAt() {
-		SimpleDateFormat parseFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ", Locale.getDefault());
-		SimpleDateFormat displayFormatter = new SimpleDateFormat(
-				App.getContext().getString(R.string.dateFormat),
-				Locale.getDefault());
-		
 		try {
-			return displayFormatter.format(parseFormatter.parse(updated_at));
+			return getDisplayFormatter().format(getApiDateFormatter().parse(updated_at));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			return "ooops";
 		}
 	}
