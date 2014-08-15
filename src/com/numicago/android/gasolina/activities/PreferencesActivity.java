@@ -10,6 +10,7 @@ public class PreferencesActivity extends Activity {
 
 	public static final String DISTANCE_RADIUS_KEY = "gasolinaNearMeDistanceRadius";
 	public static final String DISTANCE_ORDER_KEY = "gasolinaOrderBy";
+	public static final String FAVOURITE_GAS_TYPE = "gasolinaFavouriteGasType";
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

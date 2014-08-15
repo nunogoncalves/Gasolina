@@ -67,4 +67,10 @@ public class ApplicationSettings {
 				PreferencesActivity.DISTANCE_RADIUS_KEY,  //selected by user
 				context.getString(R.string.distanceArrayDefaultValue)); //default value
 	}
+	
+	public static String getFavouriteGasType() {
+		return sharedPref.getString(
+				PreferencesActivity.FAVOURITE_GAS_TYPE,  //selected by user
+				context.getString(R.string.gasArrayDefaultValue)); //default value
+	}
 }

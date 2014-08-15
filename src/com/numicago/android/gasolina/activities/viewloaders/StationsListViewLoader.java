@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -12,7 +13,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RadioButton;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -141,23 +141,21 @@ public class StationsListViewLoader extends ViewLoader {
 		}
 	}
 	
-	public void onRadioButtonClicked(View view) {
-	    // Is the button now checked?
-	    boolean checked = ((RadioButton) view).isChecked();
+	public void onViewTypeClicked(View view) {
 	    
 	    // Check which radio button was clicked
 	    switch(view.getId()) {
-	        case R.id.mainMapRadioButton:
-	            if (checked) {
+	        case R.id.stationsListListButtonLL:
 	            	hideView(lv);
 	            	showView(mapFragment.getView());
-	            }
+	            	activity.findViewById(R.id.stationsListListLineView).setBackgroundColor(Color.parseColor("#3399FF"));
+	            	activity.findViewById(R.id.stationsListMapLineView).setBackgroundColor(Color.WHITE);
 	            break;
-	        case R.id.mainListRadioButton:
-	            if (checked) {
+	        case R.id.stationsListMapButtonLL:
 	            	showView(lv);
 	            	hideView(mapFragment.getView());
-	            }
+	            	activity.findViewById(R.id.stationsListListLineView).setBackgroundColor(Color.WHITE);
+	            	activity.findViewById(R.id.stationsListMapLineView).setBackgroundColor(Color.parseColor("#3399FF"));
 	            break;
 	    }
 	}
