@@ -11,14 +11,22 @@
     <string name="list">List</string>
     <string name="map">Map</string>
     
+    <string name="gas_98">Unleaded 98</string>
+    <string name="gas_95">Unleaded 95</string>
+    <string name="gas_diesel">Diesel</string>
+    <string name="gas_gpl">GPL</string>
+    <string name="no_preference">No preference</string>
+    
 	<!-- settings activity -->
     <string name="radiusSearch">Search Radius</string>
     <string name="order">Sort Order</string>
-    
+    <string name="favouriteGasType">Favourite Gas</string>
 	
     <string name="chooseSearchRadius">Choose a distance</string>
     
     <string name="chooseOrder">Choose preferred sort order</string>
+    
+    <string name="chooseYourFavouriteGas">Choose the gas type you want to see</string>
     
     <string name="dateFormat">MMMM dd \'at\' HH:mm</string>
 </resources>

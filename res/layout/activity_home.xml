@@ -10,44 +10,91 @@
 	    android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone">
-        
-	    <RadioGroup
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_horizontal"
-	        android:orientation="horizontal" >
+        android:visibility="visible">
 
-        <RadioButton
-            android:id="@+id/mainListRadioButton"
-            android:layout_width="20dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:background="@drawable/list_radio_button_selector"
-            android:checked="true"
-            android:button="@null"
-            android:gravity="center_horizontal"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
-            android:onClick="onRadioButtonClicked"
-            android:text="@string/list" />
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/mainMapRadioButton"
-            android:layout_width="20dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:button="@null"
-            android:background="@drawable/map_radio_button_selector"
-            android:gravity="center_horizontal"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
-            android:layout_margin="0dp"
-            android:onClick="onRadioButtonClicked"
-            android:text="@string/map" />
+			<LinearLayout
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal" >
 
-    </RadioGroup>
+			    <LinearLayout
+			        android:id="@+id/stationsListListButtonLL"
+			        android:layout_width="fill_parent"
+			        android:layout_height="50dp"
+			        android:layout_weight="1"
+			        android:gravity="center_horizontal|center_vertical"
+			        android:onClick="onViewTypeClicked" >
+
+			        <ImageView
+			            android:layout_width="40dp"
+			            android:layout_height="30dp"
+			            android:src="@drawable/map" />
+
+			        <TextView
+			            android:id="@+id/textView2"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:text="@string/map" />
+			    </LinearLayout>
+			    
+			    <View android:layout_height="50dp"
+			        android:layout_width="1px"
+			        android:background="#3399FF"/>
+			    
+			    <LinearLayout
+			        android:id="@+id/stationsListMapButtonLL"
+			        android:layout_width="fill_parent"
+			        android:layout_height="50dp"
+			        android:layout_weight="1"
+			        android:gravity="center_horizontal|center_vertical"
+			        android:onClick="onViewTypeClicked" >
+
+			        <ImageView
+			            android:id="@+id/imageView1"
+			            android:layout_width="40dp"
+			            android:layout_height="30dp"
+			            android:src="@drawable/list" />
+
+			        <TextView
+			            android:id="@+id/textView1"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:text="@string/list" />
+			    </LinearLayout>
+			</LinearLayout>
+
+			<LinearLayout
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal"
+			    android:onClick="onViewTypeClicked">
+			    
+			    <View
+			        android:id="@+id/stationsListListLineView"
+			        android:layout_width="match_parent"
+			        android:layout_height="4dp"
+			        android:layout_weight="1"
+			        android:background="#3399FF" />
+
+			    <View
+			        android:layout_width="1px"
+			        android:layout_height="4dp"
+			        android:background="#3399FF" />
+
+			    <View
+			        android:id="@+id/stationsListMapLineView"
+			        android:layout_width="match_parent"
+			        android:layout_height="4dp"
+			        android:layout_weight="1"/>
+
+			</LinearLayout>
+
+		</LinearLayout>
 	    
 		<fragment
 	       android:id="@+id/stationsListMap"

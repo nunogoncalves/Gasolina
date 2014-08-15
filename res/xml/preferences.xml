@@ -16,4 +16,12 @@
         android:entryValues="@array/orderArrayValues"
         android:defaultValue="@string/orderArrayDefaultValue" />
     
+    <ListPreference
+        android:key="gasolinaFavouriteGasType"
+        android:title="@string/favouriteGasType"
+        android:dialogTitle="@string/chooseYourFavouriteGas"
+        android:entries="@array/gasArrayEntries"
+        android:entryValues="@array/gasArrayValues"
+        android:defaultValue="@string/gasArrayDefaultValue" />
+    
 </PreferenceScreen>

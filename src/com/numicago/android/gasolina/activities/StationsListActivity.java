@@ -125,7 +125,7 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 		return true;
 	}
 	
-	public void onRadioButtonClicked(View view) {
-	    homeViewLoader.onRadioButtonClicked(view);
+	public void onViewTypeClicked(View view) {
+		homeViewLoader.onViewTypeClicked(view);
 	}
 }

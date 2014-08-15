@@ -31,12 +31,27 @@
         <item>price</item>
     </string-array>
     
-	    <string name="orderArrayDefaultValue">distance</string>
+	<string name="orderArrayDefaultValue">distance</string>
 	<string-array name="orderArrayEntries">
 	    <item>@string/distance</item>
 	    <item>@string/price</item>
 	</string-array>    
     
+	<string-array name="gasArrayValues">
+	    <item>gas_98</item>
+	    <item>gas_95</item>
+	    <item>gas_diesel</item>
+	    <item>gas_gpl</item>
+	    <item>gas_no_preference</item>
+	</string-array>
 	
+	<string name="gasArrayDefaultValue">gas_no_preference</string>
+	<string-array name="gasArrayEntries">
+	    <item>@string/gas_98</item>
+	    <item>@string/gas_95</item>
+	    <item>@string/gas_diesel</item>
+	    <item>@string/gas_gpl</item>
+	    <item>@string/no_preference</item>
+	</string-array>
 	
 </resources>

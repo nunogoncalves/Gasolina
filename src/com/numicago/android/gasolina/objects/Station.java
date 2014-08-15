@@ -200,5 +200,21 @@ public class Station implements Serializable {
 		
 		return results[0];
 	}
+
+	public String getGasPrice(String favouriteGas) {
+		if("gas_98".equals(favouriteGas)) {
+			return "" + getEight_price();
+		}
+		if("gas_95".equals(favouriteGas)) {
+			return "" + getFive_price();
+		}
+		if("gas_diesel".equals(favouriteGas)) {
+			return "" + getDiesel_price();
+		}
+		if("gas_gpl".equals(favouriteGas)) {
+			return "" + getGpl_price();
+		}
+		return "";
+	}
 	
 }
