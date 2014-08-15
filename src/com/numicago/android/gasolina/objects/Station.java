@@ -202,6 +202,7 @@ public class Station implements Serializable {
 	}
 
 	public String getGasPrice(String favouriteGas) {
+		//Codigus hirripilus.. :D
 		if("gas_98".equals(favouriteGas)) {
 			return "" + getEight_price();
 		}
