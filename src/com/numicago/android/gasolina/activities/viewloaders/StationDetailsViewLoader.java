@@ -14,13 +14,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.numicago.android.gasolina.R;
 import com.numicago.android.gasolina.enums.EnumStationBrand;
 import com.numicago.android.gasolina.objects.Station;
-import com.numicago.android.gasolina.utils.ImageLoader;
 
 public class StationDetailsViewLoader {
 
 	private Activity activity;
 	private Station station;
-	private String brandBaseImageUrl = "https://dl.dropboxusercontent.com/u/2001692/applications/Gasolina/";
 	private GoogleMap googleMap;
 	
 	public StationDetailsViewLoader(Activity activity, Station station) {
@@ -31,7 +29,6 @@ public class StationDetailsViewLoader {
 	}
 
 	ImageView stationDetailsBrandImage;
-	TextView stationDetailsBrandNameTV;
 	TextView stationDetailsNameTV;
 	TextView stationDetailsDistanceTV;
 	TextView stationItemUpdatedAtTV;
@@ -44,7 +41,6 @@ public class StationDetailsViewLoader {
 	protected void instantiateViews() {
 		stationDetailsBrandImage = (ImageView) activity.findViewById(R.id.stationDetailsBrandIV);
 		stationDetailsNameTV = (TextView) activity.findViewById(R.id.stationDetailsNameTV);
-		stationDetailsBrandNameTV = (TextView) activity.findViewById(R.id.stationDetailsBrandNameTV);
 		stationItemPrice98TV = (TextView) activity.findViewById(R.id.stationDetails98TV);
 		stationItemPrice95TV = (TextView) activity.findViewById(R.id.stationDetails95TV);
 		stationItemPriceDieselTV = (TextView) activity.findViewById(R.id.stationDetailsDieselTV);
@@ -55,20 +51,15 @@ public class StationDetailsViewLoader {
 	}
 	
 	protected void fillViews() {
-		String appName = EnumStationBrand
-				.getAppNameFromApiName(station.getBrandName());
-		new ImageLoader(activity).DisplayImage(
-				brandBaseImageUrl + appName + ".png", 
-				activity,
-				stationDetailsBrandImage,
-				true,
+		int drawable = EnumStationBrand.getIconDrawableFromApiName(
 				station.getBrandName());
+		stationDetailsBrandImage.setImageDrawable(
+				activity.getResources().getDrawable(drawable));
 		
-		stationDetailsBrandNameTV.setText(station.getBrandName());
 		stationDetailsNameTV.setText(station.getName());
 		stationDetailsDistanceTV.setText(station.getDistance());
 		
-		stationDetailsUpdatedTV.setText("Actualizado: " + station.getUpdatedAt());
+		stationDetailsUpdatedTV.setText(station.getUpdatedAt());
 		
 		stationItemPrice98TV.setText("€ " + station.getEight_price() + "");
 		stationItemPrice95TV.setText("€ " + station.getFive_price() + "");

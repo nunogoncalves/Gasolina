@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="app_name">Gasolina</string>
 	<!-- api -->
 	<string name="apiStationsBaseUrl">http://185.38.45.33/v0/stations</string>
     <string name="apiBasicAuthUser">quim</string>

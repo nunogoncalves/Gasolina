@@ -32,6 +32,7 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 	private String baseWebUrl;
 	private String locationUrl;
 	private String requestFormat = "&format=json";
+	private DecimalFormat latLongFormat = new DecimalFormat("#.######");
 		
 	IUIFinishDelegator uiDelegator;
 	
@@ -49,8 +50,7 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 		LatLng latLng = ApplicationSettings.getGPSCoordinates();
 		lat = latLng.latitude;
 		lng = latLng.longitude;
-		DecimalFormat df = new DecimalFormat("#.######");
-		locationUrl = "?lat=" + df.format(lat) + "&long=" + df.format(lng);
+		locationUrl = "?lat=" + latLongFormat.format(lat) + "&long=" + latLongFormat.format(lng);
 		
 		String maxDistance = "&max_distance=" + ApplicationSettings.getDistanceRadius() ;
 

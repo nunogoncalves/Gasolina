@@ -19,6 +19,7 @@ public class StationDetailsActivity extends Activity {
 		Bundle bundle = getIntent().getExtras();
 		station = (Station) bundle.getSerializable("station");
 		
+		setTitle(station.getName());
 		new StationDetailsViewLoader(this, station);
 		
 	}

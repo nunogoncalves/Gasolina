@@ -49,18 +49,15 @@ public class ApplicationSettings {
 	
 	public static LatLng getGPSCoordinates() {
 		LatLng latLng;
-	    locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 
 	    String provider = locationManager.getBestProvider(criteria, false);
 	    lastKnownLocation = locationManager.getLastKnownLocation(provider);
 
 	    if (lastKnownLocation != null) {
 	    	latLng = new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
-//	    	System.out.print("This is REAL!!!!");
 	    } else {
 //	    	latLng = new LatLng(39.8942694, -8.2760329); //Figueiro
 	    	latLng = new LatLng(38.7640897, -9.0992928); //Oriente
-//	    	System.out.print("This is NOT REAL!!!!");
 	    }
 		return latLng;
 	}

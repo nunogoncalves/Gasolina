@@ -1518,8 +1518,8 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060036;
-        public static final int action_refresh_stations_list=0x7f060069;
-        public static final int action_settings=0x7f060068;
+        public static final int action_refresh_stations_list=0x7f06006d;
+        public static final int action_settings=0x7f06006c;
         public static final int activity_chooser_view_content=0x7f060037;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1549,6 +1549,7 @@ containing a value of this type.
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060039;
         public static final int imageView1=0x7f060062;
+        public static final int linearLayout1=0x7f060063;
         public static final int listMode=0x7f060001;
         public static final int list_item=0x7f06003b;
         public static final int mainListRadioButton=0x7f06004f;
@@ -1583,20 +1584,23 @@ containing a value of this type.
         public static final int showHome=0x7f060004;
         public static final int showTitle=0x7f060006;
         public static final int split_action_bar=0x7f060030;
+        public static final int stationDetails95LL=0x7f060065;
         public static final int stationDetails95TV=0x7f06005a;
+        public static final int stationDetails98LL=0x7f060064;
         public static final int stationDetails98TV=0x7f060059;
         public static final int stationDetailsBrandIV=0x7f060061;
         public static final int stationDetailsBrandNameTV=0x7f06005d;
+        public static final int stationDetailsDieselLL=0x7f060066;
         public static final int stationDetailsDieselTV=0x7f06005b;
         public static final int stationDetailsDistanceTV=0x7f06005f;
         public static final int stationDetailsGasTV=0x7f06005c;
         public static final int stationDetailsNameTV=0x7f06005e;
         public static final int stationDetailsUpdatedTV=0x7f060060;
-        public static final int stationItemBrandNameIV=0x7f060063;
-        public static final int stationItemDistanceTV=0x7f060066;
-        public static final int stationItemNameTV=0x7f060064;
-        public static final int stationItemUpdatedAtTV=0x7f060067;
-        public static final int stationItembrandNameTV=0x7f060065;
+        public static final int stationItemBrandNameIV=0x7f060067;
+        public static final int stationItemDistanceTV=0x7f06006a;
+        public static final int stationItemNameTV=0x7f060068;
+        public static final int stationItemUpdatedAtTV=0x7f06006b;
+        public static final int stationItembrandNameTV=0x7f060069;
         public static final int stationsListFragmentsContainer=0x7f06004e;
         public static final int stationsListGPSLookupLL=0x7f060053;
         public static final int stationsListGpsAnimationImage=0x7f060054;
@@ -1668,10 +1672,12 @@ containing a value of this type.
         public static final int activity_home=0x7f030018;
         public static final int entrance=0x7f030019;
         public static final int main=0x7f03001a;
-        public static final int station_details=0x7f03001b;
-        public static final int station_list_item=0x7f03001c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
-        public static final int test=0x7f03001e;
+        public static final int old_activity_home=0x7f03001b;
+        public static final int old_station_details=0x7f03001c;
+        public static final int station_details=0x7f03001d;
+        public static final int station_list_item=0x7f03001e;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
+        public static final int test=0x7f030020;
     }
     public static final class menu {
         public static final int main_activity_actions=0x7f0e0000;
@@ -1718,13 +1724,13 @@ containing a value of this type.
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0b000b;
         public static final int action_settings=0x7f0b0034;
-        public static final int apiBasicAuthPass=0x7f0b002f;
-        public static final int apiBasicAuthUser=0x7f0b002e;
-        public static final int apiDateFormat=0x7f0b0030;
+        public static final int apiBasicAuthPass=0x7f0b0030;
+        public static final int apiBasicAuthUser=0x7f0b002f;
+        public static final int apiDateFormat=0x7f0b0031;
         /**  api 
          */
-        public static final int apiStationsBaseUrl=0x7f0b002d;
-        public static final int app_name=0x7f0b0033;
+        public static final int apiStationsBaseUrl=0x7f0b002e;
+        public static final int app_name=0x7f0b002d;
         public static final int auth_client_needs_enabling_title=0x7f0b000e;
         public static final int auth_client_needs_installation_title=0x7f0b000f;
         public static final int auth_client_needs_update_title=0x7f0b0010;
@@ -1825,11 +1831,11 @@ containing a value of this type.
         public static final int connect_to_the_internet=0x7f0b0036;
         public static final int dateFormat=0x7f0b0040;
         public static final int distance=0x7f0b0038;
-        public static final int distanceArrayDefaultValue=0x7f0b0031;
+        public static final int distanceArrayDefaultValue=0x7f0b0032;
         public static final int list=0x7f0b003a;
         public static final int map=0x7f0b003b;
         public static final int order=0x7f0b003d;
-        public static final int orderArrayDefaultValue=0x7f0b0032;
+        public static final int orderArrayDefaultValue=0x7f0b0033;
         public static final int price=0x7f0b0039;
         /**  settings activity 
  settings activity 
