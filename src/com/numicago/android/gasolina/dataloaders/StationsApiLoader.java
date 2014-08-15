@@ -46,6 +46,16 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 		execute(); //will call doInBackground
 	}
 	
+/*
+ 	http://185.38.45.33/v0/stations
+	http://185.38.45.33/v0/stations?q[brand_name.in]=BP,CEPSA
+	http://185.38.45.33/v0/stations?lat=39.5942213&long=-8.6447989&max_distance=20
+	http://185.38.45.33/v0/stations?lat=39.8957118&long=-8.2774673&max_distance=5
+	http://185.38.45.33/v0/stations?q[brand_name.in]=GALP&q[page]=1
+	http://185.38.45.33/v0/stations?q[brand_name]=GALP&page=1
+*/
+
+	
 	private String rebuildLocationUrl() {
 		LatLng latLng = ApplicationSettings.getGPSCoordinates();
 		lat = latLng.latitude;
