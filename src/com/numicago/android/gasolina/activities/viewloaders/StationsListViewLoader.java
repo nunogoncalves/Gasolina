@@ -19,6 +19,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -72,7 +73,7 @@ public class StationsListViewLoader extends ViewLoader {
     	radiousVsZoom.put("1", 14);
     	radiousVsZoom.put("5", 12);
     	radiousVsZoom.put("10", 11);
-    	radiousVsZoom.put("15", 11);
+    	radiousVsZoom.put("15", 10);
     	radiousVsZoom.put("20", 10);
     	radiousVsZoom.put("50", 9);
     }
@@ -136,9 +137,14 @@ public class StationsListViewLoader extends ViewLoader {
 			marker.title(station.getName());
 			
 			googleMap.addMarker(marker);
-			
-			
 		}
+		CircleOptions co = new CircleOptions();
+		co.center(pointer)
+		  .fillColor(ApplicationSettings.MAPS_CIRCLE_COLOR)
+		  .strokeColor(Color.BLUE)
+		  .strokeWidth(1)
+		  .radius(Integer.parseInt(ApplicationSettings.getDistanceRadius()) * 1000);
+		googleMap.addCircle(co);
 	}
 	
 	public void onViewTypeClicked(View view) {
