@@ -1,16 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center_vertical"
-    android:orientation="vertical"
-    tools:context=".HomeActivity" >
+	android:id="@+id/content_frame"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical" >
 
-	<LinearLayout android:id="@+id/stationsListFragmentsContainer"
+    <LinearLayout android:id="@+id/stationsListFragmentsContainer"
 	    android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
 		<LinearLayout
 		    android:layout_width="match_parent"
@@ -27,8 +26,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="50dp"
 			        android:layout_weight="1"
-			        android:gravity="center_horizontal|center_vertical"
-			        android:onClick="onViewTypeClicked" >
+			        android:gravity="center_horizontal|center_vertical">
 
 			        <ImageView
 			            android:layout_width="40dp"
@@ -51,8 +49,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="50dp"
 			        android:layout_weight="1"
-			        android:gravity="center_horizontal|center_vertical"
-			        android:onClick="onViewTypeClicked" >
+			        android:gravity="center_horizontal|center_vertical">
 
 			        <ImageView
 			            android:id="@+id/imageView1"
@@ -131,5 +128,5 @@
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	    
     </LinearLayout>
-    
+       
 </LinearLayout>

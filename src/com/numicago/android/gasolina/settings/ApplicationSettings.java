@@ -14,6 +14,8 @@ import com.numicago.android.gasolina.activities.PreferencesActivity;
 
 public class ApplicationSettings {
 	
+	public static final int MAPS_CIRCLE_COLOR = 0x550099FF;
+	
 	private static Context context;
 	private static ApplicationSettings settings; 
 	private static ConnectivityManager cm;
