@@ -1520,8 +1520,9 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060036;
-        public static final int action_refresh_stations_list=0x7f060072;
-        public static final int action_settings=0x7f060071;
+        public static final int action_refresh_stations_list=0x7f060074;
+        public static final int action_search_stations_list=0x7f060075;
+        public static final int action_settings=0x7f060076;
         public static final int activity_chooser_view_content=0x7f060037;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1536,6 +1537,7 @@ containing a value of this type.
         public static final int dialog=0x7f06000e;
         public static final int disableHome=0x7f060008;
         public static final int dropdown=0x7f06000f;
+        public static final int editText1=0x7f060067;
         public static final int edit_query=0x7f060042;
         public static final int end=0x7f060013;
         public static final int entranteWifiIV=0x7f06005a;
@@ -1551,7 +1553,7 @@ containing a value of this type.
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060039;
         public static final int imageView1=0x7f060052;
-        public static final int linearLayout1=0x7f060067;
+        public static final int linearLayout1=0x7f06006a;
         public static final int listMode=0x7f060001;
         public static final int list_item=0x7f06003b;
         public static final int mainListRadioButton=0x7f06005b;
@@ -1569,6 +1571,8 @@ containing a value of this type.
         public static final int radio=0x7f060041;
         public static final int sandbox=0x7f060020;
         public static final int satellite=0x7f06001a;
+        public static final int searchDialogCancelButton=0x7f060069;
+        public static final int searchDialogOkButton=0x7f060068;
         public static final int search_badge=0x7f060044;
         public static final int search_bar=0x7f060043;
         public static final int search_button=0x7f060045;
@@ -1585,24 +1589,24 @@ containing a value of this type.
         public static final int showHome=0x7f060004;
         public static final int showTitle=0x7f060006;
         public static final int split_action_bar=0x7f060030;
-        public static final int stationDetails95LL=0x7f060069;
+        public static final int stationDetails95LL=0x7f06006c;
         public static final int stationDetails95TV=0x7f06005f;
-        public static final int stationDetails98LL=0x7f060068;
+        public static final int stationDetails98LL=0x7f06006b;
         public static final int stationDetails98TV=0x7f06005e;
         public static final int stationDetailsBrandIV=0x7f060066;
         public static final int stationDetailsBrandNameTV=0x7f060062;
-        public static final int stationDetailsDieselLL=0x7f06006a;
+        public static final int stationDetailsDieselLL=0x7f06006d;
         public static final int stationDetailsDieselTV=0x7f060060;
         public static final int stationDetailsDistanceTV=0x7f060064;
         public static final int stationDetailsGasTV=0x7f060061;
         public static final int stationDetailsNameTV=0x7f060063;
         public static final int stationDetailsUpdatedTV=0x7f060065;
-        public static final int stationItemBrandNameIV=0x7f06006b;
-        public static final int stationItemDistanceTV=0x7f06006f;
-        public static final int stationItemNameTV=0x7f06006c;
-        public static final int stationItemUpdatedAtTV=0x7f060070;
-        public static final int stationItembrandNameTV=0x7f06006d;
-        public static final int stationListItemPrice=0x7f06006e;
+        public static final int stationItemBrandNameIV=0x7f06006e;
+        public static final int stationItemDistanceTV=0x7f060072;
+        public static final int stationItemNameTV=0x7f06006f;
+        public static final int stationItemUpdatedAtTV=0x7f060073;
+        public static final int stationItembrandNameTV=0x7f060070;
+        public static final int stationListItemPrice=0x7f060071;
         public static final int stationsListFragmentsContainer=0x7f06004e;
         public static final int stationsListGPSLookupLL=0x7f060058;
         public static final int stationsListGpsAnimationImage=0x7f060059;
@@ -1680,10 +1684,11 @@ containing a value of this type.
         public static final int entrance=0x7f030019;
         public static final int old_activity_home=0x7f03001a;
         public static final int old_station_details=0x7f03001b;
-        public static final int station_details=0x7f03001c;
-        public static final int station_list_item=0x7f03001d;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
-        public static final int test=0x7f03001f;
+        public static final int search_modal=0x7f03001c;
+        public static final int station_details=0x7f03001d;
+        public static final int station_list_item=0x7f03001e;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
+        public static final int test=0x7f030020;
     }
     public static final class menu {
         public static final int main_activity_actions=0x7f0e0000;
@@ -1743,9 +1748,9 @@ containing a value of this type.
         public static final int auth_client_play_services_err_notification_msg=0x7f0b0011;
         public static final int auth_client_requested_by_msg=0x7f0b0012;
         public static final int auth_client_using_bad_version_title=0x7f0b000d;
-        public static final int chooseOrder=0x7f0b0046;
-        public static final int chooseSearchRadius=0x7f0b0045;
-        public static final int chooseYourFavouriteGas=0x7f0b0047;
+        public static final int chooseOrder=0x7f0b0047;
+        public static final int chooseSearchRadius=0x7f0b0046;
+        public static final int chooseYourFavouriteGas=0x7f0b0048;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1835,28 +1840,29 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f0b002b;
-        public static final int connect_to_the_internet=0x7f0b0037;
-        public static final int dateFormat=0x7f0b0048;
-        public static final int distance=0x7f0b0039;
+        public static final int connect_to_the_internet=0x7f0b0038;
+        public static final int dateFormat=0x7f0b0049;
+        public static final int distance=0x7f0b003a;
         public static final int distanceArrayDefaultValue=0x7f0b0032;
-        public static final int favouriteGasType=0x7f0b0044;
+        public static final int favouriteGasType=0x7f0b0045;
         public static final int gasArrayDefaultValue=0x7f0b0034;
-        public static final int gas_95=0x7f0b003e;
-        public static final int gas_98=0x7f0b003d;
-        public static final int gas_diesel=0x7f0b003f;
-        public static final int gas_gpl=0x7f0b0040;
-        public static final int list=0x7f0b003b;
-        public static final int map=0x7f0b003c;
-        public static final int no_preference=0x7f0b0041;
-        public static final int order=0x7f0b0043;
+        public static final int gas_95=0x7f0b003f;
+        public static final int gas_98=0x7f0b003e;
+        public static final int gas_diesel=0x7f0b0040;
+        public static final int gas_gpl=0x7f0b0041;
+        public static final int list=0x7f0b003c;
+        public static final int map=0x7f0b003d;
+        public static final int no_preference=0x7f0b0042;
+        public static final int order=0x7f0b0044;
         public static final int orderArrayDefaultValue=0x7f0b0033;
-        public static final int price=0x7f0b003a;
+        public static final int price=0x7f0b003b;
         /**  settings activity 
  settings activity 
          */
-        public static final int radiusSearch=0x7f0b0042;
+        public static final int radiusSearch=0x7f0b0043;
         public static final int refresh=0x7f0b0036;
-        public static final int searching_gps_signal=0x7f0b0038;
+        public static final int search=0x7f0b0037;
+        public static final int searching_gps_signal=0x7f0b0039;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

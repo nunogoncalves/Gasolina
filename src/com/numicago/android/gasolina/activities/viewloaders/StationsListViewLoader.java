@@ -60,10 +60,10 @@ public class StationsListViewLoader extends ViewLoader {
 		frameAnimation.start();
 	}
 
-	public void loadStationsList(List<Station> stations) {
+	public void loadStationsList(List<Station> stations, LatLng aroundLatLngPoint) {
 		this.stations = stations;
 		lv.setAdapter(new StationItemAdapter(activity, stations));
-		populateMapWithStations(stations);
+		populateMapWithStations(stations, aroundLatLngPoint);
 	}
 
 	private static final HashMap<String, Integer> radiousVsZoom;
@@ -123,11 +123,11 @@ public class StationsListViewLoader extends ViewLoader {
 		}
 	}
 	
-	public void populateMapWithStations(List<Station> stations) {
+	public void populateMapWithStations(List<Station> stations, LatLng aroundLatLngPoint) {
 		googleMap.clear();
-		LatLng pointer = ApplicationSettings.getGPSCoordinates();
+//		LatLng pointer = ApplicationSettings.getGPSCoordinates();
 		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-				pointer, radiousVsZoom.get(ApplicationSettings.getDistanceRadius())));
+				aroundLatLngPoint, radiousVsZoom.get(ApplicationSettings.getDistanceRadius())));
 		for (int i = 0; i < stations.size(); i++) {
 			Station station = stations.get(i);
 			MarkerOptions marker = new MarkerOptions();
@@ -139,7 +139,7 @@ public class StationsListViewLoader extends ViewLoader {
 			googleMap.addMarker(marker);
 		}
 		CircleOptions co = new CircleOptions();
-		co.center(pointer)
+		co.center(aroundLatLngPoint)
 		  .fillColor(ApplicationSettings.MAPS_CIRCLE_COLOR)
 		  .strokeColor(Color.BLUE)
 		  .strokeWidth(1)

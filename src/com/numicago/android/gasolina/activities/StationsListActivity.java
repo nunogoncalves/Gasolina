@@ -3,6 +3,7 @@ package com.numicago.android.gasolina.activities;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
@@ -14,10 +15,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.numicago.android.gasolina.R;
 import com.numicago.android.gasolina.activities.viewloaders.IUIFinishDelegator;
 import com.numicago.android.gasolina.activities.viewloaders.StationsListViewLoader;
@@ -68,14 +71,14 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 	}
 
 	@SuppressWarnings("unchecked")
-	public void dataReadyToUse(List<?> stations) {
+	public void dataReadyToUse(List<?> stations, LatLng point) {
 		listeningToGps = false;
 		homeViewLoader.showStationsListOrMap();
 		this.stations = (ArrayList<Station>) stations;
 		if(stations.size() == 0){
 			Toast.makeText(thisActivity, "ZERO STATIOPNS", Toast.LENGTH_LONG).show();
 		}
-		homeViewLoader.loadStationsList(this.stations);
+		homeViewLoader.loadStationsList(this.stations, point);
 	}
 
 	public void listenToLocationUpdates() {
@@ -120,6 +123,26 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 			return super.onOptionsItemSelected(item);
 		case R.id.action_refresh_stations_list: 
 			listenToLocationUpdates();
+			return super.onOptionsItemSelected(item);
+		case R.id.action_search_stations_list: 
+			final Dialog dialog = new Dialog(thisActivity);
+			dialog.setTitle("Indique o local que deseja procurar");
+			dialog.setContentView(R.layout.search_modal);
+			dialog.findViewById(R.id.searchDialogOkButton).setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					new StationsApiLoader(thisActivity).searchStationsAroundLocation("Porto, Portugal");
+					dialog.dismiss();
+				}
+			});
+			
+			dialog.findViewById(R.id.searchDialogCancelButton).setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					dialog.dismiss();
+				}
+			});
+			dialog.show();
 			return super.onOptionsItemSelected(item);
 		}
 		return true;

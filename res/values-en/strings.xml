@@ -4,6 +4,7 @@
     <string name="app_name">Gasolina</string>
     <string name="action_settings">Settings</string>
     <string name="refresh">Refresh</string>
+    <string name="search">Search</string>
     <string name="connect_to_the_internet">Connect to the internet</string>
     <string name="searching_gps_signal">Waiting for GPS signal</string>
     <string name="distance">Distance</string>

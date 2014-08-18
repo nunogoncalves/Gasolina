@@ -1,5 +1,6 @@
 package com.numicago.android.gasolina.dataloaders;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -14,6 +15,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.AsyncTask;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -35,6 +39,7 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 	private DecimalFormat latLongFormat = new DecimalFormat("#.######");
 		
 	IUIFinishDelegator uiDelegator;
+	private LatLng point;
 	
 	public StationsApiLoader(IUIFinishDelegator uiDelegator) {
 		super();
@@ -56,10 +61,17 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 */
 
 	
-	private String rebuildLocationUrl() {
-		LatLng latLng = ApplicationSettings.getGPSCoordinates();
-		lat = latLng.latitude;
-		lng = latLng.longitude;
+	private String rebuildLocationUrl(String... coordinates) {
+		
+		if(coordinates.length > 0) {
+			point = new LatLng(Double.parseDouble(coordinates[0]), 
+					Double.parseDouble(coordinates[1]));
+		} else {
+			point = ApplicationSettings.getGPSCoordinates();
+		}
+		
+		lat = point.latitude;
+		lng = point.longitude;
 		locationUrl = "?lat=" + latLongFormat.format(lat) + "&long=" + latLongFormat.format(lng);
 		
 		String maxDistance = "&max_distance=" + ApplicationSettings.getDistanceRadius() ;
@@ -72,7 +84,7 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 	@Override
 	protected List<Station> doInBackground(String... params) {
 
-		String url = rebuildLocationUrl();
+		String url = rebuildLocationUrl(params);
 		HttpGet get = new HttpGet(url);
 		get.addHeader(BasicScheme.authenticate(
 				new UsernamePasswordCredentials(
@@ -105,7 +117,19 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 	
 	@Override
 	protected void onPostExecute(List<Station> stations) {
-		uiDelegator.dataReadyToUse(stations);
+		uiDelegator.dataReadyToUse(stations, point);
 		super.onPostExecute(stations);
+	}
+
+	public void searchStationsAroundLocation(String location) {
+		Geocoder geocoder = new Geocoder((Context) uiDelegator);
+		List<Address> addressList = null;
+		try {
+			addressList = geocoder.getFromLocationName(location, 1);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		execute("" + addressList.get(0).getLatitude(), "" + addressList.get(0).getLongitude());
 	}
 }
