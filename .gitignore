@@ -4,3 +4,5 @@
 *.dex
 
 *.ap_
+
+*.class

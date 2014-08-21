@@ -16,7 +16,7 @@
     <string name="gas_95">Sem Chumbo 95</string>
     <string name="gas_diesel">Diesel</string>
     <string name="gas_gpl">GPL</string>
-    <string name="no_preference">Sem preferência</string>
+    <string name="gas_no_preference">Sem preferência</string>
     <string name="favouriteGasType">Combustível preferido</string>
     
 	<!-- settings activity -->

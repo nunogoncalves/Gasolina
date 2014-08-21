@@ -12,11 +12,11 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Localidade"
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/searchModalLocationET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

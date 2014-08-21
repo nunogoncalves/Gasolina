@@ -1537,7 +1537,6 @@ containing a value of this type.
         public static final int dialog=0x7f06000e;
         public static final int disableHome=0x7f060008;
         public static final int dropdown=0x7f06000f;
-        public static final int editText1=0x7f060067;
         public static final int edit_query=0x7f060042;
         public static final int end=0x7f060013;
         public static final int entranteWifiIV=0x7f06005a;
@@ -1573,6 +1572,7 @@ containing a value of this type.
         public static final int satellite=0x7f06001a;
         public static final int searchDialogCancelButton=0x7f060069;
         public static final int searchDialogOkButton=0x7f060068;
+        public static final int searchModalLocationET=0x7f060067;
         public static final int search_badge=0x7f060044;
         public static final int search_bar=0x7f060043;
         public static final int search_button=0x7f060045;
@@ -1694,6 +1694,12 @@ containing a value of this type.
         public static final int main_activity_actions=0x7f0e0000;
     }
     public static final class string {
+        public static final int _10km=0x7f0b0034;
+        public static final int _15km=0x7f0b0035;
+        public static final int _1km=0x7f0b0032;
+        public static final int _20km=0x7f0b0036;
+        public static final int _50km=0x7f0b0037;
+        public static final int _5km=0x7f0b0033;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f0b0001;
@@ -1734,7 +1740,7 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0b000b;
-        public static final int action_settings=0x7f0b0035;
+        public static final int action_settings=0x7f0b003b;
         public static final int apiBasicAuthPass=0x7f0b0030;
         public static final int apiBasicAuthUser=0x7f0b002f;
         public static final int apiDateFormat=0x7f0b0031;
@@ -1748,9 +1754,9 @@ containing a value of this type.
         public static final int auth_client_play_services_err_notification_msg=0x7f0b0011;
         public static final int auth_client_requested_by_msg=0x7f0b0012;
         public static final int auth_client_using_bad_version_title=0x7f0b000d;
-        public static final int chooseOrder=0x7f0b0047;
-        public static final int chooseSearchRadius=0x7f0b0046;
-        public static final int chooseYourFavouriteGas=0x7f0b0048;
+        public static final int chooseOrder=0x7f0b004d;
+        public static final int chooseSearchRadius=0x7f0b004c;
+        public static final int chooseYourFavouriteGas=0x7f0b004e;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1840,29 +1846,29 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f0b002b;
-        public static final int connect_to_the_internet=0x7f0b0038;
-        public static final int dateFormat=0x7f0b0049;
-        public static final int distance=0x7f0b003a;
-        public static final int distanceArrayDefaultValue=0x7f0b0032;
-        public static final int favouriteGasType=0x7f0b0045;
-        public static final int gasArrayDefaultValue=0x7f0b0034;
-        public static final int gas_95=0x7f0b003f;
-        public static final int gas_98=0x7f0b003e;
-        public static final int gas_diesel=0x7f0b0040;
-        public static final int gas_gpl=0x7f0b0041;
-        public static final int list=0x7f0b003c;
-        public static final int map=0x7f0b003d;
-        public static final int no_preference=0x7f0b0042;
-        public static final int order=0x7f0b0044;
-        public static final int orderArrayDefaultValue=0x7f0b0033;
-        public static final int price=0x7f0b003b;
+        public static final int connect_to_the_internet=0x7f0b003e;
+        public static final int dateFormat=0x7f0b004f;
+        public static final int distance=0x7f0b0040;
+        public static final int distanceArrayDefaultValue=0x7f0b0038;
+        public static final int favouriteGasType=0x7f0b004b;
+        public static final int gasArrayDefaultValue=0x7f0b003a;
+        public static final int gas_95=0x7f0b0045;
+        public static final int gas_98=0x7f0b0044;
+        public static final int gas_diesel=0x7f0b0046;
+        public static final int gas_gpl=0x7f0b0047;
+        public static final int gas_no_preference=0x7f0b0048;
+        public static final int list=0x7f0b0042;
+        public static final int map=0x7f0b0043;
+        public static final int order=0x7f0b004a;
+        public static final int orderArrayDefaultValue=0x7f0b0039;
+        public static final int price=0x7f0b0041;
         /**  settings activity 
  settings activity 
          */
-        public static final int radiusSearch=0x7f0b0043;
-        public static final int refresh=0x7f0b0036;
-        public static final int search=0x7f0b0037;
-        public static final int searching_gps_signal=0x7f0b0039;
+        public static final int radiusSearch=0x7f0b0049;
+        public static final int refresh=0x7f0b003c;
+        public static final int search=0x7f0b003d;
+        public static final int searching_gps_signal=0x7f0b003f;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

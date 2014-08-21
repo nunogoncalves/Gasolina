@@ -16,7 +16,7 @@
     <string name="gas_95">Unleaded 95</string>
     <string name="gas_diesel">Diesel</string>
     <string name="gas_gpl">GPL</string>
-    <string name="no_preference">No preference</string>
+    <string name="gas_no_preference">No preference</string>
     
 	<!-- settings activity -->
     <string name="radiusSearch">Search Radius</string>

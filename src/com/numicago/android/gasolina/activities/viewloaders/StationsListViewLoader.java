@@ -70,12 +70,12 @@ public class StationsListViewLoader extends ViewLoader {
     static
     {
     	radiousVsZoom = new HashMap<String, Integer>();
-    	radiousVsZoom.put("1", 14);
-    	radiousVsZoom.put("5", 12);
-    	radiousVsZoom.put("10", 11);
-    	radiousVsZoom.put("15", 10);
-    	radiousVsZoom.put("20", 10);
-    	radiousVsZoom.put("50", 9);
+    	radiousVsZoom.put("_1km", 14);
+    	radiousVsZoom.put("_5km", 12);
+    	radiousVsZoom.put("_10km", 11);
+    	radiousVsZoom.put("_15km", 10);
+    	radiousVsZoom.put("_20km", 10);
+    	radiousVsZoom.put("_50km", 9);
     }
 	
 	private void initializeMap() {
@@ -89,7 +89,7 @@ public class StationsListViewLoader extends ViewLoader {
 		LatLng pointer = ApplicationSettings.getGPSCoordinates();
 		
 		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-				pointer, radiousVsZoom.get(ApplicationSettings.getDistanceRadius())));
+				pointer, radiousVsZoom.get("_"  + ApplicationSettings.getDistanceRadius() + "km")));
 		
 		googleMap.setOnInfoWindowClickListener(new OnInfoWindowClickListener() {
 
@@ -127,7 +127,7 @@ public class StationsListViewLoader extends ViewLoader {
 		googleMap.clear();
 //		LatLng pointer = ApplicationSettings.getGPSCoordinates();
 		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-				aroundLatLngPoint, radiousVsZoom.get(ApplicationSettings.getDistanceRadius())));
+				aroundLatLngPoint, radiousVsZoom.get("_" + ApplicationSettings.getDistanceRadius() + "km")));
 		for (int i = 0; i < stations.size(); i++) {
 			Station station = stations.get(i);
 			MarkerOptions marker = new MarkerOptions();

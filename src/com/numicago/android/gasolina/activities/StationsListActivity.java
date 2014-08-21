@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -131,7 +132,9 @@ public class StationsListActivity extends ActionBarActivity implements IUIFinish
 			dialog.findViewById(R.id.searchDialogOkButton).setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					new StationsApiLoader(thisActivity).searchStationsAroundLocation("Porto, Portugal");
+					String location = ((EditText) dialog
+							.findViewById(R.id.searchModalLocationET)).getText().toString();
+					new StationsApiLoader(thisActivity).searchStationsAroundLocation(location + ", Portugal");
 					dialog.dismiss();
 				}
 			});
