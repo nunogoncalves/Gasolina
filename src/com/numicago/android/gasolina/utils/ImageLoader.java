@@ -13,13 +13,13 @@ import java.util.Map;
 import java.util.Stack;
 import java.util.WeakHashMap;
 
-import com.numicago.android.gasolina.R;
-
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.widget.ImageView;
+
+import com.numicago.android.gasolina.R;
 
 public class ImageLoader {
     
