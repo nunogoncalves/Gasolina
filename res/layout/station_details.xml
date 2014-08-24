@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent" >
+
+	<LinearLayout
+	    android:id="@+id/linearLayout1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentRight="true"
+	    android:orientation="vertical" >
+	
+	        <LinearLayout
+	            android:id="@+id/stationDetails98LL"
+	            android:layout_width="match_parent"
+	            android:layout_height="40dp"
+	            android:background="#009926"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:layout_weight="1"
+	                android:paddingLeft="10dp"
+	                android:text="98"
+	                android:textColor="#68cc49"
+	                android:textColorHint="#FFF"
+	                android:textSize="25sp"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:id="@+id/stationDetails98TV"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_horizontal|center_vertical|right"
+	                android:layout_weight="1"
+	                android:gravity="center_horizontal|right"
+	                android:paddingRight="10dp"
+	                android:textAppearance="?android:attr/textAppearanceLarge"
+	                android:textColor="#FFF"
+	                android:textSize="35sp" />
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/stationDetails95LL"
+	            android:layout_width="match_parent"
+	            android:layout_height="40dp"
+	            android:background="#6dcf4c"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:layout_weight="1"
+	                android:paddingLeft="10dp"
+	                android:text="95"
+	                android:textAppearance="?android:attr/textAppearanceMedium"
+	                android:textColor="#039926"
+	                android:textColorHint="#FFF"
+	                android:textSize="25sp"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:id="@+id/stationDetails95TV"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_horizontal|center_vertical"
+	                android:layout_weight="1"
+	                android:gravity="center_horizontal|right"
+	                android:paddingRight="10dp"
+	                android:textAppearance="?android:attr/textAppearanceLarge"
+	                android:textColor="#FFF"
+	                android:textSize="35sp" />
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/stationDetailsDieselLL"
+	            android:layout_width="match_parent"
+	            android:layout_height="40dp"
+	            android:background="#262626"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:layout_weight="1"
+	                android:paddingLeft="10dp"
+	                android:text="Gasóleo"
+	                android:textAppearance="?android:attr/textAppearanceMedium"
+	                android:textColor="#49494a"
+	                android:textColorHint="#FFF"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:id="@+id/stationDetailsDieselTV"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_horizontal|center_vertical"
+	                android:layout_weight="1"
+	                android:gravity="center_horizontal|right"
+	                android:paddingRight="10dp"
+	                android:textAppearance="?android:attr/textAppearanceLarge"
+	                android:textColor="#FFF"
+	                android:textSize="35sp" />
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="40dp"
+	            android:background="#448ce3"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical|left"
+	                android:layout_weight="1"
+	                android:gravity="left"
+	                android:paddingLeft="10dp"
+	                android:text="Gás"
+	                android:textAppearance="?android:attr/textAppearanceMedium"
+	                android:textColor="#81b1eb"
+	                android:textColorHint="#FFF"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:id="@+id/stationDetailsGasTV"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_horizontal|center_vertical"
+	                android:layout_weight="1"
+	                android:gravity="center_horizontal|right"
+	                android:paddingRight="10dp"
+	                android:textAppearance="?android:attr/textAppearanceLarge"
+	                android:textColor="#FFF"
+	                android:textSize="35sp" />
+	        </LinearLayout>
+	        
+	</LinearLayout>
+
+	<fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        class="com.google.android.gms.maps.MapFragment"
+        android:name="com.google.android.gms.maps.MapFragment"
+	    android:layout_above="@+id/linearLayout1"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentTop="true"/>
+
+	<FrameLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="80dp"
+	    android:layout_above="@+id/linearLayout1"
+	    android:layout_marginBottom="-20dp"
+	    android:background="@null" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="#FFF"
+            android:gravity="center_vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:paddingLeft="10dp" >
+
+                <TextView
+                    android:id="@+id/stationDetailsNameTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginRight="25dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#81b1eb" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/stationDetailsDistanceTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/stationDetailsUpdatedTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/circle" >
+
+            <ImageView
+                android:id="@+id/stationDetailsBrandIV"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/station_placeholder" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/navigation" />
+
+    </FrameLayout>
+	
+
+</RelativeLayout>

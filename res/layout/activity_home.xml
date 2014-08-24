@@ -1,0 +1,51 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- The main content view -->
+	<FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+    <!-- The navigation drawer -->
+	
+	<LinearLayout android:id="@+id/drawerContainerLL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+	    android:background="#111"
+	    android:clickable="true"
+        android:layout_gravity="start">
+	    
+	    <LinearLayout android:id="@+id/drawerSearchContainerLL"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal">
+        
+			<EditText android:id="@+id/drawerSearchET"
+			    android:layout_width="0dp"
+			    android:layout_height="match_parent"
+			    android:hint="@string/search"
+			    android:layout_weight="1"
+			    android:textColor="#FFF"/>
+			
+			<Button android:id="@+id/drawerSearchButton"
+			    android:layout_height="match_parent"
+			    android:layout_width="wrap_content"
+			    android:text="Ok"/>
+	    </LinearLayout>
+		
+	    <ListView
+	        android:id="@+id/drawer_list"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_gravity="start"
+	        android:background="#111"
+	        android:choiceMode="singleChoice"
+	        android:divider="@android:color/transparent"
+	        android:dividerHeight="0dp" />
+	</LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>
