@@ -62,4 +62,17 @@
 	    <item>@string/gas_no_preference</item>
 	</string-array>
 	
+	<string-array name="mapStyleArrayValues">
+	    <item>map_style_normal</item>
+	    <item>map_style_satellite</item>
+	    <item>map_style_hybrid</item>
+	</string-array>
+	
+	<string name="mapStyleArrayDefaultValue">map_style_normal</string>
+	<string-array name="mapStyleArrayEntries">
+	    <item>@string/map_style_normal</item>
+	    <item>@string/map_style_satellite</item>
+	    <item>@string/map_style_hybrid</item>
+	</string-array>
+	
 </resources>

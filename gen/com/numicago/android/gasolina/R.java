@@ -23,9 +23,11 @@ public final class R {
     public static final class array {
         public static final int distanceArrayEntries=0x7f0d0000;
         public static final int distanceArrayValues=0x7f0d0001;
-        public static final int drawerEntries=0x7f0d0006;
+        public static final int drawerEntries=0x7f0d0008;
         public static final int gasArrayEntries=0x7f0d0005;
         public static final int gasArrayValues=0x7f0d0004;
+        public static final int mapStyleArrayEntries=0x7f0d0007;
+        public static final int mapStyleArrayValues=0x7f0d0006;
         public static final int orderArrayEntries=0x7f0d0003;
         public static final int orderArrayValues=0x7f0d0002;
     }
@@ -1753,7 +1755,7 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0b000b;
-        public static final int action_settings=0x7f0b003b;
+        public static final int action_settings=0x7f0b003c;
         public static final int apiBasicAuthPass=0x7f0b0030;
         public static final int apiBasicAuthUser=0x7f0b002f;
         public static final int apiDateFormat=0x7f0b0031;
@@ -1767,10 +1769,11 @@ containing a value of this type.
         public static final int auth_client_play_services_err_notification_msg=0x7f0b0011;
         public static final int auth_client_requested_by_msg=0x7f0b0012;
         public static final int auth_client_using_bad_version_title=0x7f0b000d;
-        public static final int chooseOrder=0x7f0b004f;
-        public static final int chooseSearchRadius=0x7f0b004e;
-        public static final int chooseYourFavouriteGas=0x7f0b0050;
-        public static final int close=0x7f0b003f;
+        public static final int chooseMapStyle=0x7f0b0056;
+        public static final int chooseOrder=0x7f0b0054;
+        public static final int chooseSearchRadius=0x7f0b0053;
+        public static final int chooseYourFavouriteGas=0x7f0b0055;
+        public static final int close=0x7f0b0040;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1860,30 +1863,35 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f0b002b;
-        public static final int connect_to_the_internet=0x7f0b0040;
-        public static final int dateFormat=0x7f0b0051;
-        public static final int distance=0x7f0b0042;
+        public static final int connect_to_the_internet=0x7f0b0041;
+        public static final int dateFormat=0x7f0b0057;
+        public static final int distance=0x7f0b0043;
         public static final int distanceArrayDefaultValue=0x7f0b0038;
-        public static final int favouriteGasType=0x7f0b004d;
+        public static final int favouriteGasType=0x7f0b0051;
         public static final int gasArrayDefaultValue=0x7f0b003a;
-        public static final int gas_95=0x7f0b0047;
-        public static final int gas_98=0x7f0b0046;
-        public static final int gas_diesel=0x7f0b0048;
-        public static final int gas_gpl=0x7f0b0049;
-        public static final int gas_no_preference=0x7f0b004a;
-        public static final int list=0x7f0b0044;
-        public static final int map=0x7f0b0045;
-        public static final int open=0x7f0b003e;
-        public static final int order=0x7f0b004c;
+        public static final int gas_95=0x7f0b0048;
+        public static final int gas_98=0x7f0b0047;
+        public static final int gas_diesel=0x7f0b0049;
+        public static final int gas_gpl=0x7f0b004a;
+        public static final int gas_no_preference=0x7f0b004b;
+        public static final int list=0x7f0b0045;
+        public static final int map=0x7f0b0046;
+        public static final int mapStyle=0x7f0b0052;
+        public static final int mapStyleArrayDefaultValue=0x7f0b003b;
+        public static final int map_style_hybrid=0x7f0b004e;
+        public static final int map_style_normal=0x7f0b004c;
+        public static final int map_style_satellite=0x7f0b004d;
+        public static final int open=0x7f0b003f;
+        public static final int order=0x7f0b0050;
         public static final int orderArrayDefaultValue=0x7f0b0039;
-        public static final int price=0x7f0b0043;
+        public static final int price=0x7f0b0044;
         /**  settings activity 
  settings activity 
          */
-        public static final int radiusSearch=0x7f0b004b;
-        public static final int refresh=0x7f0b003c;
-        public static final int search=0x7f0b003d;
-        public static final int searching_gps_signal=0x7f0b0041;
+        public static final int radiusSearch=0x7f0b004f;
+        public static final int refresh=0x7f0b003d;
+        public static final int search=0x7f0b003e;
+        public static final int searching_gps_signal=0x7f0b0042;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

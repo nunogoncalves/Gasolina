@@ -100,12 +100,21 @@ public class MapAndListFragment extends Fragment implements IUIFinishDelegator, 
     	radiousVsZoom.put("_50km", 9);
     }
     
+    private static final HashMap<String, Integer> mapType;
+    static
+    {
+    	mapType = new HashMap<String, Integer>();
+    	mapType.put("map_style_normal", GoogleMap.MAP_TYPE_NORMAL);
+    	mapType.put("map_style_satallite", GoogleMap.MAP_TYPE_SATELLITE);
+    	mapType.put("map_style_hybrid", GoogleMap.MAP_TYPE_HYBRID);
+    }
+    
 	private void initializeMap() {
 		mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.stationsListMap);
 		
 		googleMap = mapFragment.getMap();
 		
-		googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+		googleMap.setMapType(mapType.get(ApplicationSettings.getMapStyle()));
 		googleMap.getUiSettings().setZoomControlsEnabled(false);
 		googleMap.setMyLocationEnabled(true);
 		LatLng pointer = ApplicationSettings.getGPSCoordinates();
@@ -176,6 +185,7 @@ public class MapAndListFragment extends Fragment implements IUIFinishDelegator, 
 
 	public void populateMapWithStations(List<Station> stations, LatLng point) {
 		googleMap.clear();
+		googleMap.setMapType(mapType.get(ApplicationSettings.getMapStyle()));
 		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
 				point, radiousVsZoom.get("_" + ApplicationSettings.getDistanceRadius() + "km")));
 		for (int i = 0; i < stations.size(); i++) {

@@ -20,10 +20,15 @@
     <string name="gas_gpl">GPL</string>
     <string name="gas_no_preference">No preference</string>
     
+    <string name="map_style_normal">Normal</string>
+    <string name="map_style_satellite">Satellite</string>
+    <string name="map_style_hybrid">Hybrid</string>
+    
 	<!-- settings activity -->
     <string name="radiusSearch">Search Radius</string>
     <string name="order">Sort Order</string>
     <string name="favouriteGasType">Favourite Gas</string>
+    <string name="mapStyle">Map Style</string>
 	
     <string-array name="drawerEntries">
 	    <item name="drawerClosest">Closest</item>
@@ -36,6 +41,8 @@
     <string name="chooseOrder">Choose preferred sort order</string>
     
     <string name="chooseYourFavouriteGas">Choose the gas type you want to see</string>
+
+    <string name="chooseMapStyle">Choose the map style</string>
     
     <string name="dateFormat">MMMM dd \'at\' HH:mm</string>
 </resources>

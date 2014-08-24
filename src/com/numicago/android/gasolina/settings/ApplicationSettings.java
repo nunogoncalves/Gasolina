@@ -74,7 +74,13 @@ public class ApplicationSettings {
 	
 	public static String getFavouriteGasType() {
 		return sharedPref.getString(
-				PreferencesActivity.FAVOURITE_GAS_TYPE,  //selected by user
+				PreferencesActivity.FAVOURITE_GAS_TYPE_KEY,  //selected by user
 				context.getString(R.string.gasArrayDefaultValue)); //default value
+	}
+	
+	public static String getMapStyle() {
+		return sharedPref.getString(
+				PreferencesActivity.MAP_STYLE_KEY,  //selected by user
+				context.getString(R.string.mapStyleArrayDefaultValue)); //default value
 	}
 }

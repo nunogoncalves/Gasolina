@@ -24,4 +24,12 @@
         android:entryValues="@array/gasArrayValues"
         android:defaultValue="@string/gasArrayDefaultValue" />
     
+    <ListPreference
+        android:key="gasolinaMapStyle"
+        android:title="@string/mapStyle"
+        android:dialogTitle="@string/chooseMapStyle"
+        android:entries="@array/mapStyleArrayEntries"
+        android:entryValues="@array/mapStyleArrayValues"
+        android:defaultValue="@string/mapStyleArrayDefaultValue" />
+    
 </PreferenceScreen>

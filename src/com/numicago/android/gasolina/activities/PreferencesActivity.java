@@ -16,7 +16,8 @@ public class PreferencesActivity extends Activity {
 
 	public static final String DISTANCE_RADIUS_KEY = "gasolinaNearMeDistanceRadius";
 	public static final String DISTANCE_ORDER_KEY = "gasolinaOrderBy";
-	public static final String FAVOURITE_GAS_TYPE = "gasolinaFavouriteGasType";
+	public static final String FAVOURITE_GAS_TYPE_KEY = "gasolinaFavouriteGasType";
+	public static final String MAP_STYLE_KEY = "gasolinaMapStyle";
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -45,7 +46,7 @@ public class PreferencesActivity extends Activity {
 	        
 	        Map<String,?> keys = prefs.getAll();
 
-			for(Map.Entry<String,?> entry : keys.entrySet()){
+			for(Map.Entry<String,?> entry : keys.entrySet()) {
 				setKeySummary(entry.getKey());            
 			 }
 	    }
@@ -61,7 +62,9 @@ public class PreferencesActivity extends Activity {
 			String id = prefs.getString(key, "");
 			int resId = activity.getResources().getIdentifier(id, "string", packName);
 			Preference pref = findPreference(key);
-			pref.setSummary(activity.getString(resId));
+			if (resId != 0) {
+				pref.setSummary(activity.getString(resId));
+			}
 		}
 	}
 }

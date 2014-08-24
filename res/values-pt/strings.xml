@@ -19,7 +19,10 @@
     <string name="gas_diesel">Diesel</string>
     <string name="gas_gpl">GPL</string>
     <string name="gas_no_preference">Sem preferência</string>
-    <string name="favouriteGasType">Combustível preferido</string>
+    
+    <string name="map_style_normal">Normal</string>
+    <string name="map_style_satellite">Satélite</string>
+    <string name="map_style_hybrid">Hibrido</string>
     
     <string-array name="drawerEntries">
 	    <item name="drawerClosest">Mais Perto</item>
@@ -30,10 +33,13 @@
 	<!-- settings activity -->
     <string name="radiusSearch">Raio de pesquisa</string>
     <string name="order">Ordenação</string>
+    <string name="favouriteGasType">Combustível preferido</string>
+    <string name="mapStyle">Estilo do mapa</string>
 	
     <string name="chooseSearchRadius">Escolha uma distância</string>
-    
     <string name="chooseOrder">Escolha a ordenação preferida</string>
+	<string name="chooseMapStyle">Escolha o estilo do mapa</string>
+    
     <string name="orderArrayDefaultValue">distance</string>
 	
     <string name="chooseYourFavouriteGas">Escolha o combústivel que pretende ver</string>
