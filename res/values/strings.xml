@@ -8,22 +8,30 @@
     <string name="apiBasicAuthPass">roscas</string>
     <string name="apiDateFormat">"yyyy-MM-dd\'T\'HH:mm:ssZ"</string>
     
+    <string name="_1km">1 km</string>
+    <string name="_5km">5 km</string>
+    <string name="_10km">10 km</string>
+    <string name="_15km">15 km</string>
+    <string name="_20km">20 km</string>
+    <string name="_50km">50 km</string>
+    
     <string-array name="distanceArrayEntries">
-        <item>1 km</item>
-        <item>5 km</item>
-        <item>10 km</item>
-        <item>15 km</item>
-        <item>20 km</item>
+        <item>@string/_1km</item>
+        <item>@string/_5km</item>
+        <item>@string/_10km</item>
+        <item>@string/_15km</item>
+        <item>@string/_20km</item>
+        <item>@string/_50km</item>
     </string-array>
     
-    <string name="distanceArrayDefaultValue">5</string>
+    <string name="distanceArrayDefaultValue">_5km</string>
     <string-array name="distanceArrayValues">
-        <item>1</item>
-        <item>5</item>
-        <item>10</item>
-        <item>15</item>
-        <item>20</item>
-        <item>50</item>
+        <item>_1km</item>
+        <item>_5km</item>
+        <item>_10km</item>
+        <item>_15km</item>
+        <item>_20km</item>
+        <item>_50km</item>
     </string-array>
 
 	<string-array name="orderArrayValues">

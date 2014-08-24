@@ -19,6 +19,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -59,12 +60,12 @@ public class StationsListViewLoader extends ViewLoader {
 		frameAnimation.start();
 	}
 
-	public void loadStationsList(List<Station> stations) {
+	public void loadStationsList(List<Station> stations, LatLng aroundLatLngPoint) {
 		this.stations = stations;
 		lv.setAdapter(new StationItemAdapter(activity, stations));
-		populateMapWithStations(stations);
+		populateMapWithStations(stations, aroundLatLngPoint);
 	}
-
+	
 	private static final HashMap<String, Integer> radiousVsZoom;
     static
     {
@@ -122,11 +123,10 @@ public class StationsListViewLoader extends ViewLoader {
 		}
 	}
 	
-	public void populateMapWithStations(List<Station> stations) {
+	public void populateMapWithStations(List<Station> stations, LatLng aroundLatLngPoint) {
 		googleMap.clear();
-		LatLng pointer = ApplicationSettings.getGPSCoordinates();
 		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-				pointer, radiousVsZoom.get(ApplicationSettings.getDistanceRadius())));
+				aroundLatLngPoint, radiousVsZoom.get("_" + ApplicationSettings.getDistanceRadius() + "km")));
 		for (int i = 0; i < stations.size(); i++) {
 			Station station = stations.get(i);
 			MarkerOptions marker = new MarkerOptions();
@@ -136,9 +136,14 @@ public class StationsListViewLoader extends ViewLoader {
 			marker.title(station.getName());
 			
 			googleMap.addMarker(marker);
-			
-			
 		}
+		CircleOptions co = new CircleOptions();
+		co.center(aroundLatLngPoint)
+		  .fillColor(ApplicationSettings.MAPS_CIRCLE_COLOR)
+		  .strokeColor(Color.BLUE)
+		  .strokeWidth(1)
+		  .radius(Integer.parseInt(ApplicationSettings.getDistanceRadius()) * 1000);
+		googleMap.addCircle(co);
 	}
 	
 	public void onViewTypeClicked(View view) {

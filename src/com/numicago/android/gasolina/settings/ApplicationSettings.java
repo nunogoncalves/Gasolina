@@ -64,10 +64,18 @@ public class ApplicationSettings {
 		return latLng;
 	}
 
+//	public static String getDistanceRadius() {
+//		return sharedPref.getString(
+//				PreferencesActivity.DISTANCE_RADIUS_KEY,  //selected by user
+//				context.getString(R.string.distanceArrayDefaultValue)); //default value
+//	}
+	
 	public static String getDistanceRadius() {
-		return sharedPref.getString(
+		String a = sharedPref.getString(
 				PreferencesActivity.DISTANCE_RADIUS_KEY,  //selected by user
 				context.getString(R.string.distanceArrayDefaultValue)); //default value
+		a = a.replaceAll("[^0-9]+", " ");
+		return a.trim();
 	}
 	
 	public static String getFavouriteGasType() {

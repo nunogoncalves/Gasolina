@@ -33,6 +33,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.numicago.android.gasolina.R;
 import com.numicago.android.gasolina.activities.StationDetailsActivity;
+import com.numicago.android.gasolina.activities.StationsListActivity;
 import com.numicago.android.gasolina.activities.viewloaders.IUIFinishDelegator;
 import com.numicago.android.gasolina.adapters.StationItemAdapter;
 import com.numicago.android.gasolina.dataloaders.StationsApiLoader;
@@ -91,12 +92,12 @@ public class MapAndListFragment extends Fragment implements IUIFinishDelegator, 
     static
     {
     	radiousVsZoom = new HashMap<String, Integer>();
-    	radiousVsZoom.put("1", 14);
-    	radiousVsZoom.put("5", 12);
-    	radiousVsZoom.put("10", 11);
-    	radiousVsZoom.put("15", 11);
-    	radiousVsZoom.put("20", 10);
-    	radiousVsZoom.put("50", 9);
+    	radiousVsZoom.put("_1km", 14);
+    	radiousVsZoom.put("_5km", 12);
+    	radiousVsZoom.put("_10km", 11);
+    	radiousVsZoom.put("_15km", 11);
+    	radiousVsZoom.put("_20km", 10);
+    	radiousVsZoom.put("_50km", 9);
     }
     
 	private void initializeMap() {
@@ -110,7 +111,7 @@ public class MapAndListFragment extends Fragment implements IUIFinishDelegator, 
 		LatLng pointer = ApplicationSettings.getGPSCoordinates();
 		
 		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-				pointer, radiousVsZoom.get(ApplicationSettings.getDistanceRadius())));
+				pointer, radiousVsZoom.get("_" + ApplicationSettings.getDistanceRadius() + "km")));
 		
 		googleMap.setOnInfoWindowClickListener(new OnInfoWindowClickListener() {
 
@@ -167,17 +168,16 @@ public class MapAndListFragment extends Fragment implements IUIFinishDelegator, 
 		gpsGifImageViewLayout.setGravity(Gravity.CENTER_VERTICAL);
 	}
 
-	public void loadStationsList(List<Station> stations) {
+	public void loadStationsList(List<Station> stations, LatLng point) {
 		this.stations = stations;
 		lv.setAdapter(new StationItemAdapter(getActivity(), stations));
-		populateMapWithStations(stations);
+		populateMapWithStations(stations, point);
 	}
 
-	public void populateMapWithStations(List<Station> stations) {
+	public void populateMapWithStations(List<Station> stations, LatLng point) {
 		googleMap.clear();
-		LatLng pointer = ApplicationSettings.getGPSCoordinates();
 		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-				pointer, radiousVsZoom.get(ApplicationSettings.getDistanceRadius())));
+				point, radiousVsZoom.get("_" + ApplicationSettings.getDistanceRadius() + "km")));
 		for (int i = 0; i < stations.size(); i++) {
 			Station station = stations.get(i);
 			MarkerOptions marker = new MarkerOptions();
@@ -190,7 +190,7 @@ public class MapAndListFragment extends Fragment implements IUIFinishDelegator, 
 		}
 		
 		CircleOptions co = new CircleOptions();
-		co.center(pointer)
+		co.center(point)
 		  .fillColor(ApplicationSettings.MAPS_CIRCLE_COLOR)
 		  .strokeColor(Color.BLUE)
 		  .strokeWidth(1)
@@ -199,14 +199,18 @@ public class MapAndListFragment extends Fragment implements IUIFinishDelegator, 
 	}
 	
 	@SuppressWarnings("unchecked")
-	public void dataReadyToUse(List<?> stations) {
+	public void dataReadyToUse(List<?> stations, LatLng point) {
 		listeningToGps = false;
 		showStationsListOrMap();
 		this.stations = (ArrayList<Station>) stations;
 		if(stations.size() == 0){
 			Toast.makeText(getActivity(), "ZERO STATIOPNS", Toast.LENGTH_LONG).show();
 		}
-		loadStationsList(this.stations);
+		loadStationsList(this.stations, point);
+		
+		((StationsListActivity) getActivity()).refreshMenuItem.setVisible(true);
+		((StationsListActivity) getActivity()).refreshMenuItem.collapseActionView();
+		((StationsListActivity) getActivity()).refreshMenuItem.setActionView(null); 
 	}
 	
 	private void hideView(View view) {
