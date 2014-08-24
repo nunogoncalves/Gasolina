@@ -1,15 +1,2 @@
-<<<<<<< HEAD
-
 *.class
-
-*.dex
-
-*.ap_
-
-*.class
-
-*.class
-=======
-*.class
-bin/Gasolina.apk
->>>>>>> navigation-drawer
+bin/
