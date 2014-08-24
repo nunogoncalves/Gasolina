@@ -15,7 +15,6 @@ import com.numicago.android.gasolina.activities.PreferencesActivity;
 public class ApplicationSettings {
 	
 	public static final int MAPS_CIRCLE_COLOR = 0x550099FF;
-
 	private static Context context;
 	private static ApplicationSettings settings; 
 	private static ConnectivityManager cm;
@@ -64,6 +63,12 @@ public class ApplicationSettings {
 		return latLng;
 	}
 
+//	public static String getDistanceRadius() {
+//		return sharedPref.getString(
+//				PreferencesActivity.DISTANCE_RADIUS_KEY,  //selected by user
+//				context.getString(R.string.distanceArrayDefaultValue)); //default value
+//	}
+	
 	public static String getDistanceRadius() {
 		String a = sharedPref.getString(
 				PreferencesActivity.DISTANCE_RADIUS_KEY,  //selected by user

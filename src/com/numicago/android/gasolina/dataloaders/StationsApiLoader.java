@@ -38,7 +38,7 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 	private String requestFormat = "&format=json";
 	private DecimalFormat latLongFormat = new DecimalFormat("#.######");
 		
-	IUIFinishDelegator uiDelegator;
+	private IUIFinishDelegator uiDelegator;
 	private LatLng point;
 	
 	public StationsApiLoader(IUIFinishDelegator uiDelegator) {
@@ -59,7 +59,6 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 	http://185.38.45.33/v0/stations?q[brand_name.in]=GALP&q[page]=1
 	http://185.38.45.33/v0/stations?q[brand_name]=GALP&page=1
 */
-
 	
 	private String rebuildLocationUrl(String... coordinates) {
 		
@@ -80,6 +79,7 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 		url = url.replace(",", ".");
 		return url;
 	}
+
 	
 	@Override
 	protected List<Station> doInBackground(String... params) {
@@ -121,7 +121,7 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 		super.onPostExecute(stations);
 	}
 
-	public void searchStationsAroundLocation(String location) {
+	public boolean searchStationsAroundLocation(String location) {
 		Geocoder geocoder = new Geocoder((Context) uiDelegator);
 		List<Address> addressList = null;
 		try {
@@ -129,7 +129,9 @@ public class StationsApiLoader extends AsyncTask<String, Void, List<Station>> {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 		execute("" + addressList.get(0).getLatitude(), "" + addressList.get(0).getLongitude());
+		return true;
 	}
 }

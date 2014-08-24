@@ -5,6 +5,8 @@
     <string name="action_settings">Configurações</string>
     <string name="refresh">Actualizar</string>
     <string name="search">Procurar</string>
+    <string name="open">Abrir</string>
+    <string name="close">Fechar</string>
     <string name="connect_to_the_internet">Ligue-se à internet</string>
     <string name="searching_gps_signal">A procurar sinal de GPS</string>
     <string name="distance">Distância</string>
@@ -19,10 +21,15 @@
     <string name="gas_no_preference">Sem preferência</string>
     <string name="favouriteGasType">Combustível preferido</string>
     
+    <string-array name="drawerEntries">
+	    <item name="drawerClosest">Mais Perto</item>
+	    <item name="drawerFavourites">Favoritos</item>
+	    <item name="drawerSettings">@string/action_settings</item>
+    </string-array>
+    
 	<!-- settings activity -->
     <string name="radiusSearch">Raio de pesquisa</string>
     <string name="order">Ordenação</string>
-    
 	
     <string name="chooseSearchRadius">Escolha uma distância</string>
     

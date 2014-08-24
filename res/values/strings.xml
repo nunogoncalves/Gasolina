@@ -24,7 +24,7 @@
         <item>@string/_50km</item>
     </string-array>
     
-    <string name="distanceArrayDefaultValue">5</string>
+    <string name="distanceArrayDefaultValue">_5km</string>
     <string-array name="distanceArrayValues">
         <item>_1km</item>
         <item>_5km</item>
