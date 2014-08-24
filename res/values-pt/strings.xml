@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gasolina</string>
+    <string name="action_settings">Configurações</string>
+    <string name="refresh">Actualizar</string>
+    <string name="search">Procurar</string>
+    <string name="open">Abrir</string>
+    <string name="close">Fechar</string>
+    <string name="connect_to_the_internet">Ligue-se à internet</string>
+    <string name="searching_gps_signal">A procurar sinal de GPS</string>
+    <string name="distance">Distância</string>
+    <string name="price">Preço</string>
+    <string name="list">Lista</string>
+    <string name="map">Mapa</string>
+    
+    <string name="gas_98">Sem Chumbo 98</string>
+    <string name="gas_95">Sem Chumbo 95</string>
+    <string name="gas_diesel">Diesel</string>
+    <string name="gas_gpl">GPL</string>
+    <string name="gas_no_preference">Sem preferência</string>
+    <string name="favouriteGasType">Combustível preferido</string>
+    
+    <string-array name="drawerEntries">
+	    <item name="drawerClosest">Mais Perto</item>
+	    <item name="drawerFavourites">Favoritos</item>
+	    <item name="drawerSettings">@string/action_settings</item>
+    </string-array>
+    
+	<!-- settings activity -->
+    <string name="radiusSearch">Raio de pesquisa</string>
+    <string name="order">Ordenação</string>
+	
+    <string name="chooseSearchRadius">Escolha uma distância</string>
+    
+    <string name="chooseOrder">Escolha a ordenação preferida</string>
+    <string name="orderArrayDefaultValue">distance</string>
+	
+    <string name="chooseYourFavouriteGas">Escolha o combústivel que pretende ver</string>
+
+    <string name="dateFormat">dd \'de\' MMMM \'às\' HH:mm</string>
+    	
+</resources>
