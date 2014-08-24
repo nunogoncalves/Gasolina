@@ -65,7 +65,7 @@ public class StationsListViewLoader extends ViewLoader {
 		lv.setAdapter(new StationItemAdapter(activity, stations));
 		populateMapWithStations(stations, aroundLatLngPoint);
 	}
-
+	
 	private static final HashMap<String, Integer> radiousVsZoom;
     static
     {
@@ -125,7 +125,6 @@ public class StationsListViewLoader extends ViewLoader {
 	
 	public void populateMapWithStations(List<Station> stations, LatLng aroundLatLngPoint) {
 		googleMap.clear();
-//		LatLng pointer = ApplicationSettings.getGPSCoordinates();
 		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
 				aroundLatLngPoint, radiousVsZoom.get("_" + ApplicationSettings.getDistanceRadius() + "km")));
 		for (int i = 0; i < stations.size(); i++) {
