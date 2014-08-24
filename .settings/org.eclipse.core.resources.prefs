@@ -1,7 +1,0 @@
-eclipse.preferences.version=1
-encoding//src/com/numicago/android/gasolina/activities/StationDetailsActivity.java=UTF-8
-encoding//src/com/numicago/android/gasolina/activities/StationsListActivity.java=UTF-8
-encoding//src/com/numicago/android/gasolina/activities/viewloaders/StationDetailsViewLoader.java=UTF-8
-encoding//src/com/numicago/android/gasolina/adapters/StationItemAdapter.java=UTF-8
-encoding//src/com/numicago/android/gasolina/enums/EnumStationBrand.java=UTF-8
-encoding//src/com/numicago/android/gasolina/objects/Station.java=UTF-8

@@ -1,9 +1,0 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:gasolina="http://schemas.android.com/apk/res-auto">
-    
-    <item android:id="@+id/action_refresh_stations_list"
-          android:icon="@android:drawable/ic_popup_sync"
-          android:title="@string/refresh"
-          gasolina:showAsAction="always"/>
-
-</menu>
