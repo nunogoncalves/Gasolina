@@ -221,7 +221,7 @@ android:layout_height="fill_parent" >
         </FrameLayout>
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/stationDetailNavigateToIV"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="right"

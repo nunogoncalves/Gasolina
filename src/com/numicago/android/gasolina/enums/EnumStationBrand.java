@@ -5,7 +5,7 @@ import com.numicago.android.gasolina.R;
 public enum EnumStationBrand {
 	
 	GALP("GALP", "galp", R.drawable.galp, R.drawable.galp_pointer),
-	CEPSA("CEPSA", "cepsa", R.drawable.cepsa, R.drawable.galp_pointer),
+	CEPSA("CEPSA", "cepsa", R.drawable.cepsa, R.drawable.cepsa_pointer),
 	BP("BP", "bp", R.drawable.bp, R.drawable.bp_pointer),
 	INTERMARCHE("INTERMARCHÉ", "intermarche", R.drawable.intermarche, R.drawable.intermarche_pointer),
 	JUMBO("JUMBO", "jumbo", R.drawable.jumbo, R.drawable.jumbo_pointer),

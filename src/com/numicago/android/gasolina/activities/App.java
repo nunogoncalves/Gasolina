@@ -13,7 +13,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         mContext = this;
-        ApplicationSettings.getInstance(this);
+        ApplicationSettings.getInstance();
     }
 
     public static Context getContext(){

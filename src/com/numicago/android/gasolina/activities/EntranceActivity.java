@@ -22,7 +22,7 @@ public class EntranceActivity extends Activity implements OnInternetConnected {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		appSettings = ApplicationSettings.getInstance(getApplicationContext());
+		appSettings = ApplicationSettings.getInstance();
 		
 		if (appSettings.isConnectedToInternet()) {
 			goToStationsActivity();

@@ -60,7 +60,7 @@ public class MapAndListFragment extends Fragment implements IUIFinishDelegator, 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		fragmentView = inflater.inflate(R.layout.map_and_list_fragment, container, false);
-		appSettings = ApplicationSettings.getInstance(getActivity());
+		appSettings = ApplicationSettings.getInstance();
 		locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
 		
 		instantiateViews();

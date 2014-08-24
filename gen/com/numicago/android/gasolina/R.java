@@ -1526,7 +1526,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060036;
-        public static final int action_refresh_stations_list=0x7f06007b;
+        public static final int action_refresh_stations_list=0x7f06007c;
         public static final int activity_chooser_view_content=0x7f060037;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1600,6 +1600,7 @@ containing a value of this type.
         public static final int showHome=0x7f060004;
         public static final int showTitle=0x7f060006;
         public static final int split_action_bar=0x7f060030;
+        public static final int stationDetailNavigateToIV=0x7f060075;
         public static final int stationDetails95LL=0x7f06006b;
         public static final int stationDetails95TV=0x7f06006c;
         public static final int stationDetails98LL=0x7f060069;
@@ -1611,12 +1612,12 @@ containing a value of this type.
         public static final int stationDetailsGasTV=0x7f06006f;
         public static final int stationDetailsNameTV=0x7f060071;
         public static final int stationDetailsUpdatedTV=0x7f060073;
-        public static final int stationItemBrandNameIV=0x7f060075;
-        public static final int stationItemDistanceTV=0x7f060079;
-        public static final int stationItemNameTV=0x7f060076;
-        public static final int stationItemUpdatedAtTV=0x7f06007a;
-        public static final int stationItembrandNameTV=0x7f060077;
-        public static final int stationListItemPrice=0x7f060078;
+        public static final int stationItemBrandNameIV=0x7f060076;
+        public static final int stationItemDistanceTV=0x7f06007a;
+        public static final int stationItemNameTV=0x7f060077;
+        public static final int stationItemUpdatedAtTV=0x7f06007b;
+        public static final int stationItembrandNameTV=0x7f060078;
+        public static final int stationListItemPrice=0x7f060079;
         public static final int stationsListFragmentsContainer=0x7f06005a;
         public static final int stationsListGPSLookupLL=0x7f060063;
         public static final int stationsListGpsAnimationImage=0x7f060064;

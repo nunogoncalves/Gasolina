@@ -1,8 +1,9 @@
 package com.numicago.android.gasolina.settings;
 
+import java.util.List;
+
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
@@ -10,6 +11,7 @@ import android.preference.PreferenceManager;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.numicago.android.gasolina.R;
+import com.numicago.android.gasolina.activities.App;
 import com.numicago.android.gasolina.activities.PreferencesActivity;
 
 public class ApplicationSettings {
@@ -19,21 +21,19 @@ public class ApplicationSettings {
 	private static ApplicationSettings settings; 
 	private static ConnectivityManager cm;
 	private static LocationManager locationManager;
-	private static Criteria criteria = new Criteria();
-	private static Location lastKnownLocation;
 	private static SharedPreferences sharedPref;
 	
-	private ApplicationSettings(Context context) {
-		ApplicationSettings.context = context;
+	private ApplicationSettings() {
+		ApplicationSettings.context = App.getContext();
 		cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 		
 		sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
 	}
 	
-	public static ApplicationSettings getInstance(Context _context) {
+	public static ApplicationSettings getInstance() {
 		if (settings == null) {
-			settings = new ApplicationSettings(_context);
+			settings = new ApplicationSettings();
 		}
 		return settings;
 	}
@@ -49,26 +49,21 @@ public class ApplicationSettings {
 	}
 	
 	public static LatLng getGPSCoordinates() {
-		LatLng latLng;
+	    List<String> providers = locationManager.getProviders(true);
 
-	    String provider = locationManager.getBestProvider(criteria, false);
-	    lastKnownLocation = locationManager.getLastKnownLocation(provider);
-
-	    if (lastKnownLocation != null) {
-	    	latLng = new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
-	    } else {
-//	    	latLng = new LatLng(39.8942694, -8.2760329); //Figueiro
-	    	latLng = new LatLng(38.7640897, -9.0992928); //Oriente
+	    Location location;
+	    for (int i = providers.size()-1; i >= 0; i--) {
+           location = locationManager.getLastKnownLocation(providers.get(i));
+            if (location != null) {
+                return new LatLng(location.getLatitude(), location.getLongitude()); //Figueiro
+            }
 	    }
-		return latLng;
+	    
+//		LatLng(39.8942694, -8.2760329); //Figueiro
+//	    LatLng(38.7640897, -9.0992928); //Oriente
+		return new LatLng(38.7640897, -9.0992928);
 	}
 
-//	public static String getDistanceRadius() {
-//		return sharedPref.getString(
-//				PreferencesActivity.DISTANCE_RADIUS_KEY,  //selected by user
-//				context.getString(R.string.distanceArrayDefaultValue)); //default value
-//	}
-	
 	public static String getDistanceRadius() {
 		String a = sharedPref.getString(
 				PreferencesActivity.DISTANCE_RADIUS_KEY,  //selected by user
